@@ -137,4 +137,8 @@
     <PostBuildEvent>$(ProjectDir)\..\..\Tools\DistributionTool.exe -b -i $(ProjectDir)\$(OutDir) -o $(ProjectDir)\$(OutDir)
 </PostBuildEvent>
   </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>del $(ProjectDir)\$(OutDir)\com.victorgrycuk.keepass.streamDeckPlugin
+</PreBuildEvent>
+  </PropertyGroup>
 </Project>
