@@ -43,7 +43,7 @@ namespace StreamDeck_KeePass
 
         #region Private Members
 
-        private PluginSettings settings;
+        private readonly PluginSettings settings;
 
         #endregion
         public KeePassRetrieve(SDConnection connection, InitialPayload payload) : base(connection, payload)

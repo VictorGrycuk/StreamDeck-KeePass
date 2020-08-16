@@ -2,7 +2,7 @@
 
 namespace streamdeck_keepass
 {
-    public class ClipboardHelper
+    public static class ClipboardHelper
     {
         internal static void SendToClipboard(string text)
         {
