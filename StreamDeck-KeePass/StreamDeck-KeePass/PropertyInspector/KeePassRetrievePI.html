@@ -23,6 +23,15 @@
             <div class="sdpi-item-label">Entry Name</div>
             <input class="sdpi-item-value sdProperty" placeholder="The name of the KeePass entry to retrieve the password" value="" id="entryTitle" oninput="setSettings()">
         </div>
+        <div class="sdpi-item" id="dvField">
+            <div class="sdpi-item-label">Select field to retrieve</div>
+            <select class="sdpi-item-value select sdProperty" id="field" oninput="setSettings()">
+               <option value="Password">Passwordd</option>
+               <option value="Username">Username</option>
+               <option value="Notes">Notes</option>
+               <option value="URL">URL</option>
+            </select>
+        </div>
     </div>
 </body>
 </html>
