@@ -1,0 +1,38 @@
+{
+  "Actions": [
+    {
+      "Icon": "Images/icon",
+      "Name": "Retrieve",
+      "States": [
+        {
+          "Image": "Images/keepassRetrieve",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Retrieves a password entry from a KeePass database",
+      "UUID": "com.victorgrycuk.keepass.retrieve",
+      "PropertyInspectorPath": "PropertyInspector/KeePassRetrievePI.html"
+    }
+  ],
+  "Author": "Victor Grycuk",
+  "Name": "StreamDeck-KeePass",
+  "Description": "Simple interface to retrieve information from KeePass database. Unofficial.",
+  "Icon": "Images/pluginIcon",
+  "URL": "https://github.com/VictorGrycuk/StreamDeck-KeePass",
+  "Version": "1.0",
+  "CodePath": "streamdeck-keepass",
+  "Category": "KeePass",
+  "CategoryIcon": "Images/categoryIcon",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "4.3"
+  }
+}
