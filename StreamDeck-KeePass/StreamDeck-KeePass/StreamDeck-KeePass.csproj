@@ -133,4 +133,8 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)\..\..\Tools\DistributionTool.exe -b -i $(ProjectDir)\$(OutDir) -o $(ProjectDir)\$(OutDir)
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
