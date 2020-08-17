@@ -21,7 +21,8 @@ namespace StreamDeck_KeePass
                 {
                     DBPath = string.Empty,
                     Password = string.Empty,
-                    EntryTitle = string.Empty
+                    EntryTitle = string.Empty,
+                    Field = string.Empty
                 };
                 return instance;
             }
@@ -35,11 +36,14 @@ namespace StreamDeck_KeePass
 
             [JsonProperty(PropertyName = "entryTitle")]
             public string EntryTitle { get; set; }
+
+            [JsonProperty(PropertyName = "field")]
+            public string Field { get; set; }
         }
 
         #region Private Members
 
-        private PluginSettings settings;
+        private readonly PluginSettings settings;
 
         #endregion
         public KeePassRetrieve(SDConnection connection, InitialPayload payload) : base(connection, payload)
@@ -79,8 +83,34 @@ namespace StreamDeck_KeePass
                                     Notes = entry.Strings.ReadSafe("Notes")
 
                                 };
-                var pw = entryList.Where(x => x.Title == settings.EntryTitle).FirstOrDefault().Password;
-                ClipboardHelper.SendToClipboard(pw);
+
+                if (entryList.Count() == 0)
+                {
+                    Logger.Instance.LogMessage(TracingLevel.WARN, $"No entry found for the title '{ settings.EntryTitle }'.");
+                    db.Close();
+                    return;
+                }
+                
+                var firstEntry = entryList.Where(x => x.Title == settings.EntryTitle).FirstOrDefault();
+                switch (settings.Field)
+                {
+                    case "Password":
+                        ClipboardHelper.SendToClipboard(firstEntry.Password);
+                        break;
+                    case "Username":
+                        ClipboardHelper.SendToClipboard(firstEntry.Username);
+                        break;
+                    case "Notes":
+                        ClipboardHelper.SendToClipboard(firstEntry.Notes);
+                        break;
+                    case "URL":
+                        ClipboardHelper.SendToClipboard(firstEntry.URL);
+                        break;
+                    default:
+                        Logger.Instance.LogMessage(TracingLevel.WARN, $"No field found with the name '{ settings.Field }'.");
+                        break;
+                }
+                
                 db.Close();
             }
             catch (Exception ex)

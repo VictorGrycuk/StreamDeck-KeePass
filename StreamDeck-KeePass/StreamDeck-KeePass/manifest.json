@@ -1,7 +1,7 @@
 {
   "Actions": [
     {
-      "Icon": "Images/icon",
+      "Icon": "Images/retrieve",
       "Name": "Retrieve",
       "States": [
         {
@@ -10,10 +10,25 @@
           "FontSize": "12"
         }
       ],
-      "SupportedInMultiActions": false,
+      "SupportedInMultiActions": true,
       "Tooltip": "Retrieves a password entry from a KeePass database",
       "UUID": "com.victorgrycuk.keepass.retrieve",
       "PropertyInspectorPath": "PropertyInspector/KeePassRetrievePI.html"
+    },
+    {
+      "Icon": "Images/generate",
+      "Name": "Generate",
+      "States": [
+        {
+          "Image": "Images/keepassGenerate",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Generates a custom password using Keepass",
+      "UUID": "com.victorgrycuk.keepass.generate",
+      "PropertyInspectorPath": "PropertyInspector/KeePassGeneratePI.html"
     }
   ],
   "Author": "Victor Grycuk",
@@ -21,7 +36,7 @@
   "Description": "Simple interface to retrieve information from KeePass database. Unofficial.",
   "Icon": "Images/pluginIcon",
   "URL": "https://github.com/VictorGrycuk/StreamDeck-KeePass",
-  "Version": "1.0",
+  "Version": "1.1",
   "CodePath": "streamdeck-keepass",
   "Category": "KeePass",
   "CategoryIcon": "Images/categoryIcon",
