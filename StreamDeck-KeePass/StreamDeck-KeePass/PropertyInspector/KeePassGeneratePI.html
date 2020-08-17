@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <title>StreamDeck_KeePass Settings</title>
+    <link rel="stylesheet" href="sdpi.css">
+    <script src="sdtools.common.js"></script>
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-item" id="dvLength">
+            <div class="sdpi-item-label">Password length</div>
+            <input type="number" class="sdpi-item-value sdProperty" id="length" value=20 oninput="setSettings()">
+        </div>
+        <div type="checkbox" class="sdpi-item" id="configuration">
+            <div class="sdpi-item-label">Password Configuration</div>
+            <div class="sdpi-item-value min100">
+                <div class="sdpi-item-child">
+                    <input id="useLowerCase" class="sdProperty sdCheckbox" type="checkbox" name="configuration" checked oninput="setSettings()">
+                    <label for="useLowerCase" class="sdpi-item-label"><span></span>Lower Case</label>
+                </div>
+                <div class="sdpi-item-child">
+                    <input id="useUpperCase" class="sdProperty sdCheckbox" type="checkbox" name="configuration" checked oninput="setSettings()">
+                    <label for="useUpperCase" class="sdpi-item-label"><span></span>Upper Case</label>
+                </div>
+                <div class="sdpi-item-child">
+                    <input id="useDigits" class="sdProperty sdCheckbox" type="checkbox" name="configuration" checked oninput="setSettings()">
+                    <label for="useDigits" class="sdpi-item-label"><span></span>Use Digits</label>
+                </div>
+                <div class="sdpi-item-child">
+                    <input id="usePunctuation" class="sdProperty sdCheckbox" type="checkbox" name="configuration" checked oninput="setSettings()">
+                    <label for="usePunctuation" class="sdpi-item-label"><span></span>Use Punctuation</label>
+                </div>
+                <div class="sdpi-item-child">
+                    <input id="useBrackets" class="sdProperty sdCheckbox" type="checkbox" name="configuration" checked oninput="setSettings()">
+                    <label for="useBrackets" class="sdpi-item-label"><span></span>Use Brackets</label>
+                </div>
+                <div class="sdpi-item-child">
+                    <input id="useSpecial" class="sdProperty sdCheckbox" type="checkbox" name="configuration" checked oninput="setSettings()">
+                    <label for="useSpecial" class="sdpi-item-label"><span></span>Use Special Characteres</label>
+                </div>
+                <div class="sdpi-item-child">
+                    <input id="excludeLookAlike" class="sdProperty sdCheckbox" type="checkbox" name="configuration" oninput="setSettings()">
+                    <label for="excludeLookAlike" class="sdpi-item-label"><span></span>Exclude Look-Alike Characteres</label>
+                </div>
+                <div class="sdpi-item-child">
+                    <input id="mostOccurAtMostOnce" class="sdProperty sdCheckbox" type="checkbox" name="configuration" oninput="setSettings()">
+                    <label for="mostOccurAtMostOnce" class="sdpi-item-label"><span></span>Most Occur at most Once</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
