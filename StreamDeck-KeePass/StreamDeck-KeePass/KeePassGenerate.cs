@@ -56,8 +56,8 @@ namespace StreamDeck_KeePass
             [JsonProperty(PropertyName = "excludeLookAlike")]
             public bool ExcludeLookAlike { get; set; }
 
-            [JsonProperty(PropertyName = "mostOccurAtMostOnce")]
-            public bool MostOccurAtMostOnce { get; set; }
+            [JsonProperty(PropertyName = "mustOccurAtMostOnce")]
+            public bool MustOccurAtMostOnce { get; set; }
         }
 
         #region Private Members
@@ -100,7 +100,7 @@ namespace StreamDeck_KeePass
 
                 profile.ExcludeLookAlike = settings.ExcludeLookAlike;
                 profile.Length = (uint)settings.Length;
-                profile.NoRepeatingCharacters = settings.MostOccurAtMostOnce;
+                profile.NoRepeatingCharacters = settings.MustOccurAtMostOnce;
                 
                 PwGenerator.Generate(out pw, profile, null, new CustomPwGeneratorPool());
 
