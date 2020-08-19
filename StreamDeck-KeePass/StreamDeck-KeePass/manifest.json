@@ -25,7 +25,7 @@
           "FontSize": "12"
         }
       ],
-      "SupportedInMultiActions": false,
+      "SupportedInMultiActions": true,
       "Tooltip": "Generates a custom password using Keepass",
       "UUID": "com.victorgrycuk.keepass.generate",
       "PropertyInspectorPath": "PropertyInspector/KeePassGeneratePI.html"
@@ -36,7 +36,7 @@
   "Description": "Simple interface to retrieve information from KeePass database. Unofficial.",
   "Icon": "Images/pluginIcon",
   "URL": "https://github.com/VictorGrycuk/StreamDeck-KeePass",
-  "Version": "1.1",
+  "Version": "1.2",
   "CodePath": "streamdeck-keepass",
   "Category": "KeePass",
   "CategoryIcon": "Images/categoryIcon",
