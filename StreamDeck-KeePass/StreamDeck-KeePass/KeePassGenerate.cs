@@ -1,13 +1,10 @@
 ﻿using BarRaider.SdTools;
 using KeePassLib.Cryptography.PasswordGenerator;
-using KeePassLib.Keys;
 using KeePassLib.Security;
-using KeePassLib.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using streamdeck_keepass;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace StreamDeck_KeePass
@@ -27,7 +24,9 @@ namespace StreamDeck_KeePass
                     UseDigits = true,
                     UsePunctuation = true,
                     UseBrackets = true,
-                    UseSpecial = true
+                    UseSpecial = true,
+                    ExcludeCharacters = string.Empty,
+                    CustomPattern = string.Empty
                 };
                 return instance;
             }
@@ -58,6 +57,12 @@ namespace StreamDeck_KeePass
 
             [JsonProperty(PropertyName = "mustOccurAtMostOnce")]
             public bool MustOccurAtMostOnce { get; set; }
+
+            [JsonProperty(PropertyName = "excludeCharacters")]
+            public string ExcludeCharacters { get; set; }
+
+            [JsonProperty(PropertyName = "customPattern")]
+            public string CustomPattern { get; set; }
         }
 
         #region Private Members
@@ -101,7 +106,15 @@ namespace StreamDeck_KeePass
                 profile.ExcludeLookAlike = settings.ExcludeLookAlike;
                 profile.Length = (uint)settings.Length;
                 profile.NoRepeatingCharacters = settings.MustOccurAtMostOnce;
-                
+                profile.ExcludeCharacters = settings.ExcludeCharacters;
+
+                if (!string.IsNullOrEmpty(settings.CustomPattern))
+                {
+                    profile.GeneratorType = PasswordGeneratorType.Pattern;
+                    profile.PatternPermutePassword = true;
+                    profile.Pattern = settings.CustomPattern;
+                }
+
                 PwGenerator.Generate(out pw, profile, null, new CustomPwGeneratorPool());
 
                 if (pw.IsEmpty)
