@@ -39,6 +39,9 @@ It uses the following configuration:
 - **Use Special Characters.** ``!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~``. Default `true`.
 - **Exclude Look-Alike characters.** It will avoid using two character that look similar, like `O` and `0`. Default `false`.
 - **Must occur at most Once.** It will prevent characters from appearing more than once. Default `false`.
+- **Characters to Exclude.** Any character included in the text field will be excluded from the generated password.
+- **Custom Pattern.** Allows to use a custom defined password generation pattern. Refer to the section *Generating Passwords that Follow Rules* of [KeePass Password Generator](https://keepass.info/help/base/pwgenerator.html) documentation.
+  - ***Note***: Using a custom pattern will override all the previous configuration.
 
 Check [KeePass Password Generator](https://keepass.info/help/base/pwgenerator.html) help site for more information.
 
