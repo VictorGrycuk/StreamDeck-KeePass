@@ -1,4 +1,4 @@
-# KeePass for StreamDeck 
+# KeePass for Stream Deck 
 ## Description
 
 Simple interface to retrieve information from a KeePass database and generate passwords using [KeePassLib](https://www.nuget.org/packages/KeePassLib/).
@@ -44,5 +44,12 @@ It uses the following configuration:
   - ***Note***: Using a custom pattern will override all the previous configuration.
 
 Check [KeePass Password Generator](https://keepass.info/help/base/pwgenerator.html) help site for more information.
+
+## My other Stream Deck plugins
+
+- **[Color Picker](https://github.com/VictorGrycuk/streamdeck-color-picker)**
+- **[Magnifier](https://github.com/VictorGrycuk/streamdeck-magnifier)**
+
+---
 
 The icon for this action is a modified version of *iOS Filled* at [Icon8](https://icons8.com).
