@@ -86,8 +86,10 @@ namespace StreamDeck_KeePass
 
                 if (entryList.Count() == 0)
                 {
+                    Connection.ShowAlert().Wait();
                     Logger.Instance.LogMessage(TracingLevel.WARN, $"No entry found for the title '{ settings.EntryTitle }'.");
                     db.Close();
+                    
                     return;
                 }
                 
@@ -111,10 +113,13 @@ namespace StreamDeck_KeePass
                         break;
                 }
                 
+                Connection.ShowOk().Wait();
+                
                 db.Close();
             }
             catch (Exception ex)
             {
+                Connection.ShowAlert();
                 Logger.Instance.LogMessage(TracingLevel.INFO, ex.Message);
             }
         }

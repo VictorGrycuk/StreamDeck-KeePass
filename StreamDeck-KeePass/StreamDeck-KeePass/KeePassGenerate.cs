@@ -119,9 +119,12 @@ namespace StreamDeck_KeePass
 
                 if (pw.IsEmpty)
                 {
+                    Connection.ShowAlert().Wait();
                     Logger.Instance.LogMessage(TracingLevel.WARN, "No password was generated with the given configuration");
                     return;
                 }
+
+                Connection.ShowOk().Wait();
 
                 ClipboardHelper.SendToClipboard(pw.ReadString());
             }
