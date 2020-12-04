@@ -49,6 +49,7 @@ Check [KeePass Password Generator](https://keepass.info/help/base/pwgenerator.ht
 
 - **[Color Picker](https://github.com/VictorGrycuk/streamdeck-color-picker)**
 - **[Magnifier](https://github.com/VictorGrycuk/streamdeck-magnifier)**
+- **[Repository Watcher](https://github.com/VictorGrycuk/streamdeck-repository-watcher)**
 
 ---
 
