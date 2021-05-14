@@ -36,7 +36,7 @@
   "Description": "Simple interface to retrieve information from KeePass database. Unofficial.",
   "Icon": "Images/pluginIcon",
   "URL": "https://github.com/VictorGrycuk/StreamDeck-KeePass",
-  "Version": "1.3.1",
+  "Version": "1.4.0",
   "CodePath": "streamdeck-keepass",
   "Category": "KeePass",
   "CategoryIcon": "Images/categoryIcon",
