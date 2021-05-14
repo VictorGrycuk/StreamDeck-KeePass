@@ -21,6 +21,7 @@ namespace StreamDeck_KeePass
                 {
                     DBPath = string.Empty,
                     Password = string.Empty,
+                    KeyFilePath = string.Empty,
                     EntryTitle = string.Empty,
                     Field = string.Empty
                 };
@@ -33,6 +34,9 @@ namespace StreamDeck_KeePass
 
             [JsonProperty(PropertyName = "Password")]
             public string Password { get; set; }
+
+            [JsonProperty(PropertyName = "keyFilePath")]
+            public string KeyFilePath { get; set; }
 
             [JsonProperty(PropertyName = "entryTitle")]
             public string EntryTitle { get; set; }
@@ -70,6 +74,10 @@ namespace StreamDeck_KeePass
                 var conn = new IOConnectionInfo { Path = settings.DBPath };
                 var compKey = new CompositeKey();
                 compKey.AddUserKey(new KcpPassword(settings.Password));
+                if (!string.IsNullOrEmpty(settings.KeyFilePath))
+                {
+                    compKey.AddUserKey(new KcpKeyFile(settings.KeyFilePath));
+                }
                 var db = new KeePassLib.PwDatabase();
                 db.Open(conn, compKey, null);
                 var entryList = from entry in db.RootGroup.GetEntries(true)

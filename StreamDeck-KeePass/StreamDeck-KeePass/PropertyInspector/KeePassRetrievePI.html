@@ -16,6 +16,10 @@
             <input class="sdpi-item-value sdProperty" placeholder="The filepath to your KeePass .kdbx" value="" id="DBPath">
         </div>
         <div class="sdpi-item" id="dvPassword">
+            <div class="sdpi-item-label">(Optional) Key File path</div>
+            <input class="sdpi-item-value sdProperty" placeholder="The path of the key file for the .kdbx" value="" id="keyFilePath" oninput="setSettings()">
+        </div>
+        <div class="sdpi-item" id="dvPassword">
             <div class="sdpi-item-label">KeePass db password</div>
             <input class="sdpi-item-value sdProperty" placeholder="The password for the .kdbx" value="" id="Password" oninput="setSettings()" type="password">
         </div>
