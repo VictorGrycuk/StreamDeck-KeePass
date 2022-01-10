@@ -63,6 +63,9 @@ namespace StreamDeck_KeePass
 
             [JsonProperty(PropertyName = "customPattern")]
             public string CustomPattern { get; set; }
+
+            [JsonProperty(PropertyName = "randomlyPermute")]
+            public bool RandomlyPermute { get; set; }
         }
 
         #region Private Members
@@ -111,7 +114,7 @@ namespace StreamDeck_KeePass
                 if (!string.IsNullOrEmpty(settings.CustomPattern))
                 {
                     profile.GeneratorType = PasswordGeneratorType.Pattern;
-                    profile.PatternPermutePassword = true;
+                    profile.PatternPermutePassword = settings.RandomlyPermute;
                     profile.Pattern = settings.CustomPattern;
                 }
 
