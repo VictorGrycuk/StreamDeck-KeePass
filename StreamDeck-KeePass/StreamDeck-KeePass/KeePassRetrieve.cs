@@ -83,13 +83,13 @@ namespace StreamDeck_KeePass
                 var entryList = from entry in db.RootGroup.GetEntries(true)
                                 select new
                                 {
+                                    UUID = entry.Uuid,
                                     Group = entry.ParentGroup.Name,
                                     Title = entry.Strings.ReadSafe("Title"),
                                     Username = entry.Strings.ReadSafe("UserName"),
                                     Password = entry.Strings.ReadSafe("Password"),
                                     URL = entry.Strings.ReadSafe("URL"),
                                     Notes = entry.Strings.ReadSafe("Notes")
-
                                 };
 
                 if (entryList.Count() == 0)
@@ -100,8 +100,9 @@ namespace StreamDeck_KeePass
                     
                     return;
                 }
-                
-                var firstEntry = entryList.Where(x => x.Title == settings.EntryTitle).FirstOrDefault();
+
+                var firstEntry = entryList.Where(x => x.Title == settings.EntryTitle || x.UUID.ToHexString() == settings.EntryTitle).FirstOrDefault();
+
                 switch (settings.Field)
                 {
                     case "Password":
