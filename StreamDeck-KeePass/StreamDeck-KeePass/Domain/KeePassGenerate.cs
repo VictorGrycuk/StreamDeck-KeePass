@@ -4,9 +4,13 @@ using StreamDeck_KeePass.Domain.Settings;
 
 namespace streamdeck_keepass.Domain
 {
-    static internal class KeePassGenerate
+    internal class KeePassGenerate : IKeePassAction
     {
-        static internal string Invoke(GenerateSettings settings)
+        private readonly GenerateSettings settings;
+
+        public KeePassGenerate(object objectSettings) => settings = objectSettings as GenerateSettings;
+
+        public string Invoke()
         {
             var profile = new PwProfile { CharSet = new PwCharSet() };
             profile.CharSet.Clear();

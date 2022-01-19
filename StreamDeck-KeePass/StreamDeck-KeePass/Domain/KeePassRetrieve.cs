@@ -6,9 +6,13 @@ using System.Linq;
 
 namespace streamdeck_keepass.Domain
 {
-    static internal class KeePassRetrieve
+    internal class KeePassRetrieve : IKeePassAction
     {
-        static internal string Invoke(RetrieveSettings settings)
+        private readonly RetrieveSettings settings;
+
+        public KeePassRetrieve(object objectSettings) => settings = objectSettings as RetrieveSettings;
+
+        public string Invoke()
         {
             var db = OpenDB(settings);
             var foundEntry = GetKeePassEntry(db, settings.EntryTitle);

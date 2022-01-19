@@ -31,9 +31,9 @@ namespace StreamDeck_KeePass
         {
             try
             {
-                var result = plugin.GeneratePassword();
+                var result = plugin.Invoke();
 
-                if (result == KeePassPlugin.Result.WARNING)
+                if (result == Result.WARNING)
                 {
                     Connection.ShowAlert().Wait();
                     Logger.Instance.LogMessage(TracingLevel.WARN, "No password was generated with the given configuration");

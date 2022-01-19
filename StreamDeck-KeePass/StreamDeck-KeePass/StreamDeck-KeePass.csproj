@@ -93,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\IKeePassAction.cs" />
     <Compile Include="Domain\KeePassEntry.cs" />
     <Compile Include="Domain\KeePassRetrieve.cs" />
     <Compile Include="Domain\Settings\GenerateSettings.cs" />
