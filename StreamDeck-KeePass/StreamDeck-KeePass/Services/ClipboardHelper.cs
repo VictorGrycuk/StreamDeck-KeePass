@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 
-namespace streamdeck_keepass
+namespace streamdeck_keepass.Services
 {
     public static class ClipboardHelper
     {

@@ -93,9 +93,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClipboardHelper.cs" />
-    <Compile Include="KeePassGenerate.cs" />
-    <Compile Include="KeePassRetrieve.cs" />
+    <Compile Include="Domain\KeePassEntry.cs" />
+    <Compile Include="Domain\KeePassRetrieve.cs" />
+    <Compile Include="Domain\Settings\GenerateSettings.cs" />
+    <Compile Include="Domain\Settings\RetrieveSettings.cs" />
+    <Compile Include="Services\ClipboardHelper.cs" />
+    <Compile Include="Domain\KeePassGenerate.cs" />
+    <Compile Include="Domain\KeePassPlugin.cs" />
+    <Compile Include="ActionGenerate.cs" />
+    <Compile Include="ActionRetrieve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -187,6 +193,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>$(ProjectDir)\..\..\Tools\DistributionTool.exe -b -i $(ProjectDir)\$(OutDir) -o $(ProjectDir)\$(OutDir)
