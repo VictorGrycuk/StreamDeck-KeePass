@@ -10,7 +10,7 @@ namespace StreamDeck_KeePass
     [PluginActionId("com.victorgrycuk.keepass.generate")]
     public class ActionGenerate : PluginBase
     {
-        private readonly KeePassPlugin plugin;
+        private KeePassPlugin plugin;
         private readonly GenerateSettings settings;
 
         public ActionGenerate(SDConnection connection, InitialPayload payload) : base(connection, payload)
@@ -58,6 +58,7 @@ namespace StreamDeck_KeePass
         {
             Tools.AutoPopulateSettings(settings, payload.Settings);
             SaveSettings();
+            plugin = new KeePassPlugin(settings);
         }
 
         public override void ReceivedGlobalSettings(ReceivedGlobalSettingsPayload payload) { }

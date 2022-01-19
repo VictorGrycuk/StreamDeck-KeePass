@@ -33,5 +33,8 @@ namespace StreamDeck_KeePass.Domain.Settings
 
         [JsonProperty(PropertyName = "field")]
         public string Field { get; set; }
+
+        [JsonProperty(PropertyName = "clearTime")]
+        public int ClearTime { get; set; }
     }
 }

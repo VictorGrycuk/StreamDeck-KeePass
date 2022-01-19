@@ -12,9 +12,19 @@ namespace streamdeck_keepass.Domain
     public class KeePassPlugin
     {
         internal readonly IKeePassAction action;
+        internal readonly int clearDelay;
 
-        public KeePassPlugin(GenerateSettings settings) => action = new KeePassGenerate(settings);
-        public KeePassPlugin(RetrieveSettings settings) => action = new KeePassRetrieve(settings);
+        public KeePassPlugin(GenerateSettings settings)
+        {
+            action = new KeePassGenerate(settings);
+            clearDelay = settings.ClearTime;
+        }
+
+        public KeePassPlugin(RetrieveSettings settings)
+        {
+            action = new KeePassRetrieve(settings);
+            clearDelay = settings.ClearTime;
+        }
 
         public Result Invoke()
         {
@@ -25,7 +35,8 @@ namespace streamdeck_keepass.Domain
                 return Result.WARNING;
             }
 
-            ClipboardHelper.SendToClipboard(password);
+            ClipboardHelper.SendToClipboard(password, clearDelay);
+
             return Result.OK;
         }
     }

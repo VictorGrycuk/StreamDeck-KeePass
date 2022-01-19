@@ -11,7 +11,7 @@ namespace StreamDeck_KeePass
     public partial class ActionRetrieve : PluginBase
     {
 
-        private readonly KeePassPlugin plugin;
+        private KeePassPlugin plugin;
         private readonly RetrieveSettings settings;
 
         public ActionRetrieve(SDConnection connection, InitialPayload payload) : base(connection, payload)
@@ -60,6 +60,7 @@ namespace StreamDeck_KeePass
         {
             Tools.AutoPopulateSettings(settings, payload.Settings);
             SaveSettings();
+            plugin = new KeePassPlugin(settings);
         }
 
         public override void ReceivedGlobalSettings(ReceivedGlobalSettingsPayload payload) { }

@@ -16,7 +16,8 @@ namespace StreamDeck_KeePass.Domain.Settings
                 UseBrackets = true,
                 UseSpecial = true,
                 ExcludeCharacters = string.Empty,
-                CustomPattern = string.Empty
+                CustomPattern = string.Empty,
+                ClearTime = 0
             };
             return instance;
         }
@@ -56,5 +57,8 @@ namespace StreamDeck_KeePass.Domain.Settings
 
         [JsonProperty(PropertyName = "randomlyPermute")]
         public bool RandomlyPermute { get; set; }
+
+        [JsonProperty(PropertyName = "clearTime")]
+        public int ClearTime { get; set; }
     }
 }

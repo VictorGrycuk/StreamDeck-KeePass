@@ -30,11 +30,15 @@
         <div class="sdpi-item" id="dvField">
             <div class="sdpi-item-label">Select field to retrieve</div>
             <select class="sdpi-item-value select sdProperty" id="field" oninput="setSettings()">
-               <option value="Password">Password</option>
-               <option value="Username">Username</option>
-               <option value="Notes">Notes</option>
-               <option value="URL">URL</option>
+                <option value="Password">Password</option>
+                <option value="Username">Username</option>
+                <option value="Notes">Notes</option>
+                <option value="URL">URL</option>
             </select>
+        </div>
+        <div class="sdpi-item" id="dvClearTime">
+            <div class="sdpi-item-label">Clear Time</div>
+            <input type="number" class="sdpi-item-value sdProperty" placeholder="0 to not clear clipboard" value="0" id="clearTime" oninput="setSettings()">
         </div>
     </div>
 </body>
