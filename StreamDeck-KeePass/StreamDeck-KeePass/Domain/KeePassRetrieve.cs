@@ -57,7 +57,7 @@ namespace streamdeck_keepass.Domain
         }
 
         static private KeePassEntry GetKeePassEntry(PwDatabase db, string matchingValue) => (from entry in db.RootGroup.GetEntries(true)
-                                                                                             where entry.Strings.ReadSafe("Title") == matchingValue
+                                                                                             where entry.Strings.ReadSafe("Title") == matchingValue || entry.Uuid.ToHexString() == matchingValue
                                                                                              select new KeePassEntry(entry)).FirstOrDefault();
     }
 }

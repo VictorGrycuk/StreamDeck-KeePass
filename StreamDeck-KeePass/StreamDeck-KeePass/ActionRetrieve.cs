@@ -37,7 +37,7 @@ namespace StreamDeck_KeePass
                 if (result == Result.WARNING)
                 {
                     Connection.ShowAlert().Wait();
-                    Logger.Instance.LogMessage(TracingLevel.WARN, "No password was generated with the given configuration");
+                    Logger.Instance.LogMessage(TracingLevel.WARN, "No entry was found");
                     return;
                 }
                 else
