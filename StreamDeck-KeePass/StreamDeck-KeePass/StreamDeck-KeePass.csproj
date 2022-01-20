@@ -93,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\ActionBase.cs" />
     <Compile Include="Domain\IKeePassAction.cs" />
     <Compile Include="Domain\KeePassEntry.cs" />
     <Compile Include="Domain\KeePassRetrieve.cs" />
@@ -101,8 +102,8 @@
     <Compile Include="Services\ClipboardHelper.cs" />
     <Compile Include="Domain\KeePassGenerate.cs" />
     <Compile Include="Domain\KeePassPlugin.cs" />
-    <Compile Include="ActionGenerate.cs" />
-    <Compile Include="ActionRetrieve.cs" />
+    <Compile Include="Actions\ActionGenerate.cs" />
+    <Compile Include="Actions\ActionRetrieve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
