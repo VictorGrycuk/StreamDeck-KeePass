@@ -26,6 +26,12 @@ namespace streamdeck_keepass.Domain
             clearDelay = settings.ClearTime;
         }
 
+        public KeePassPlugin(AwareSettings settings)
+        {
+            action = new KeePassAware(settings);
+            clearDelay = settings.ClearTime;
+        }
+
         public Result Invoke()
         {
             var password = action.Invoke();

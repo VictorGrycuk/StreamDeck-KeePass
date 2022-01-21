@@ -29,6 +29,21 @@
       "Tooltip": "Generates a custom password using Keepass",
       "UUID": "com.victorgrycuk.keepass.generate",
       "PropertyInspectorPath": "PropertyInspector/KeePassGeneratePI.html"
+    },
+    {
+      "Icon": "Images/aware",
+      "Name": "Aware",
+      "States": [
+        {
+          "Image": "Images/keepassAware",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Retrieve a password entry based on the current active window",
+      "UUID": "com.victorgrycuk.keepass.aware",
+      "PropertyInspectorPath": "PropertyInspector/KeePassAwarePI.html"
     }
   ],
   "Author": "Victor Grycuk",

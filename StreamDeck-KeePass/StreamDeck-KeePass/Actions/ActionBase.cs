@@ -16,6 +16,8 @@ namespace streamdeck_keepass.Actions
 
         internal void CreatePlugin(RetrieveSettings settings) => plugin = new KeePassPlugin(settings);
 
+        internal void CreatePlugin(AwareSettings settings) => plugin = new KeePassPlugin(settings);
+
         public override void Dispose() => Logger.Instance.LogMessage(TracingLevel.INFO, $"Destructor called");
 
         public void ExecuteAction(string logMessage)
