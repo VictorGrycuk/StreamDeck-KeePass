@@ -18,20 +18,29 @@ namespace streamdeck_keepass.Actions
 
         internal void CreatePlugin(AwareSettings settings) => plugin = new KeePassPlugin(settings);
 
-        public override void Dispose() => Logger.Instance.LogMessage(TracingLevel.INFO, $"Destructor called");
+        internal void CreatePlugin(CommanderSettings settings) => plugin = new KeePassPlugin(settings);
+
+        public override void Dispose() => Logger.Instance.LogMessage(TracingLevel.INFO, "Destructor called");
 
         public void ExecuteAction(string logMessage)
         {
-            var result = plugin.Invoke();
+            try
+            {
+                var result = plugin.Invoke();
 
-            if (result == Result.WARNING)
-            {
-                Connection.ShowAlert().Wait();
-                Logger.Instance.LogMessage(TracingLevel.WARN, logMessage);
+                if (result == Result.WARNING)
+                {
+                    Connection.ShowAlert().Wait();
+                    Logger.Instance.LogMessage(TracingLevel.WARN, logMessage);
+                }
+                else
+                {
+                    Connection.ShowOk().Wait();
+                }
             }
-            else
+            catch (System.Exception ex)
             {
-                Connection.ShowOk().Wait();
+                Logger.Instance.LogMessage(TracingLevel.INFO, ex.Message);
             }
         }
 

@@ -44,6 +44,21 @@
       "Tooltip": "Retrieve a password entry based on the current active window",
       "UUID": "com.victorgrycuk.keepass.aware",
       "PropertyInspectorPath": "PropertyInspector/KeePassAwarePI.html"
+    },
+    {
+      "Icon": "Images/commander",
+      "Name": "MircoBabin's KeePassCommander",
+      "States": [
+        {
+          "Image": "Images/keepassCommander",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Allows direct communication with KeePass using MircoBabin's KeePassCommander",
+      "UUID": "com.victorgrycuk.keepass.commander",
+      "PropertyInspectorPath": "PropertyInspector/KeePassCommanderPI.html"
     }
   ],
   "Author": "Victor Grycuk",

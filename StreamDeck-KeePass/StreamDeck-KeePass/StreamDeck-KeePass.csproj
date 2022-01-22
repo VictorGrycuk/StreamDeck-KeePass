@@ -95,12 +95,15 @@
   <ItemGroup>
     <Compile Include="Actions\ActionBase.cs" />
     <Compile Include="Actions\ActionAware.cs" />
+    <Compile Include="Actions\ActionCommander.cs" />
     <Compile Include="Domain\IKeePassAction.cs" />
     <Compile Include="Domain\KeePassEntry.cs" />
     <Compile Include="Domain\KeePassAware.cs" />
+    <Compile Include="Domain\KeePassCommander.cs" />
     <Compile Include="Domain\KeePassRetrieve.cs" />
     <Compile Include="Domain\Settings\GenerateSettings.cs" />
     <Compile Include="Domain\Settings\AwareSettings.cs" />
+    <Compile Include="Domain\Settings\CommandSettings.cs" />
     <Compile Include="Domain\Settings\RetrieveSettings.cs" />
     <Compile Include="Services\ClipboardHelper.cs" />
     <Compile Include="Domain\KeePassGenerate.cs" />
@@ -109,6 +112,7 @@
     <Compile Include="Actions\ActionRetrieve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\KeePassEntry.cs" />
     <Compile Include="Services\ProcessHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,10 +135,22 @@
     <Content Include="Images\categoryIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\commander%402x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\commander.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\keepassAware%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\keepassAware.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\keepassCommander%402x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\keepassCommander.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\retrieve%402x.png">
@@ -187,6 +203,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="PropertyInspector\KeePassAwarePI.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PropertyInspector\KeePassCommanderPI.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="PropertyInspector\KeePassRetrievePI.html">

@@ -11,21 +11,13 @@
 </head>
 <body>
     <div class="sdpi-wrapper">
-        <div class="sdpi-item" id="dvDBPath">
-            <div class="sdpi-item-label">KeePass db path</div>
-            <input class="sdpi-item-value sdProperty" placeholder="The filepath to your KeePass .kdbx" value="" id="DBPath" oninput="setSettings()">
-        </div>
-        <div class="sdpi-item" id="dvKey">
-            <div class="sdpi-item-label">(Optional) Key File path</div>
-            <input class="sdpi-item-value sdProperty" placeholder="The path of the key file for the .kdbx" value="" id="keyFilePath" oninput="setSettings()">
-        </div>
-        <div class="sdpi-item" id="dvPassword">
-            <div class="sdpi-item-label">KeePass db password</div>
-            <input class="sdpi-item-value sdProperty" placeholder="The password for the .kdbx" value="" id="Password" oninput="setSettings()" type="password">
+        <div class="sdpi-item" id="dvCommandDLLPath">
+            <div class="sdpi-item-label">CommandDLL path</div>
+            <input class="sdpi-item-value sdProperty" placeholder="The filepath to the KeePassCommandDll.dll" value="" id="commandDLLPath" oninput="setSettings()">
         </div>
         <div class="sdpi-item" id="dvEntryTitle">
-            <div class="sdpi-item-label">Entry Name or UUID</div>
-            <input class="sdpi-item-value sdProperty" placeholder="The name or UUID of the KeePass entry to retrieve the password" value="" id="entryTitle" oninput="setSettings()">
+            <div class="sdpi-item-label">Entry Name</div>
+            <input class="sdpi-item-value sdProperty" placeholder="The name of the KeePass entry to retrieve the password" value="" id="entryTitle" oninput="setSettings()">
         </div>
         <div class="sdpi-item" id="dvField">
             <div class="sdpi-item-label">Select field to retrieve</div>

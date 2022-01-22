@@ -15,12 +15,13 @@ It uses the following configuration:
 
 - **KeePass db path.** The absolute path to the KeePass file.
 - **KeePass db password.** The main password of the KeePass file.
-- **Entry Name.** The name of the entry that has the desired information.
+- **Entry Name or UUID.** The name or UUID of the entry that has the desired information.
 - **Field to retrieve.** The field whose content will be copied to the clipboard
   - Password
   - Username
   - Notes
   - URL
+- **Clear Time**. The time in seconds to keep the value in the clipboard. Use `0` to leave it indefinitely (default).
 
 
 
@@ -42,8 +43,43 @@ It uses the following configuration:
 - **Characters to Exclude.** Any character included in the text field will be excluded from the generated password.
 - **Custom Pattern.** Allows to use a custom defined password generation pattern. Refer to the section *Generating Passwords that Follow Rules* of [KeePass Password Generator](https://keepass.info/help/base/pwgenerator.html) documentation.
   - ***Note***: Using a custom pattern will override all the previous configuration.
+- **Clear Time**. The time in seconds to keep the value in the clipboard. Use `0` to leave it indefinitely (default).
 
 Check [KeePass Password Generator](https://keepass.info/help/base/pwgenerator.html) help site for more information.
+
+
+
+#### Aware
+
+Its function its identical to *Retrieve*, except it retrieves the stored field based on the current active window.
+
+It only replaces the Entry Name option with a new one:
+
+- **Process Mapping.** A `key=value` that maps a running process with a KeePass entry title/UUID.
+  - Examples:
+    - `steam.exe=Steam`
+    - `Discord.exe=2A8CC713A463524C928E1F613BA10DAC`
+  - Add one mapping per line.
+
+
+
+#### MircoBabin's KeePassCommander
+
+It allows direct communication with the KeePass application to retrieve a field of a stored entry to the clipboard. **Note**: It requires the **[KeePassCommander](https://github.com/MircoBabin/KeePassCommander)** plugin for KeePass.
+
+It uses the following configuration:
+
+- **CommandDLL path**. The absolute path to the `KeePassCommandDll.dll`.
+- **Entry Name.** The name of the entry that has the desired information.
+  - **Note**: It does not support search by UUID.
+- **Field to retrieve.** The field whose content will be copied to the clipboard
+  - Password
+  - Username
+  - Notes
+  - URL
+- **Clear Time**. The time in seconds to keep the value in the clipboard. Use `0` to leave it indefinitely (default).
+
+
 
 ## My other Stream Deck plugins
 
