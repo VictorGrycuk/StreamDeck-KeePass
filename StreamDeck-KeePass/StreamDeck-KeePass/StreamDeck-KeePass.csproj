@@ -29,7 +29,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -93,11 +93,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClipboardHelper.cs" />
-    <Compile Include="KeePassGenerate.cs" />
-    <Compile Include="KeePassRetrieve.cs" />
+    <Compile Include="Actions\ActionBase.cs" />
+    <Compile Include="Actions\ActionAware.cs" />
+    <Compile Include="Actions\ActionCommander.cs" />
+    <Compile Include="Domain\IKeePassAction.cs" />
+    <Compile Include="Domain\KeePassEntry.cs" />
+    <Compile Include="Domain\KeePassAware.cs" />
+    <Compile Include="Domain\KeePassCommander.cs" />
+    <Compile Include="Domain\KeePassRetrieve.cs" />
+    <Compile Include="Domain\Settings\GenerateSettings.cs" />
+    <Compile Include="Domain\Settings\AwareSettings.cs" />
+    <Compile Include="Domain\Settings\CommandSettings.cs" />
+    <Compile Include="Domain\Settings\RetrieveSettings.cs" />
+    <Compile Include="Services\ClipboardHelper.cs" />
+    <Compile Include="Domain\KeePassGenerate.cs" />
+    <Compile Include="Domain\KeePassPlugin.cs" />
+    <Compile Include="Actions\ActionGenerate.cs" />
+    <Compile Include="Actions\ActionRetrieve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\KeePassEntry.cs" />
+    <Compile Include="Services\ProcessHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -107,10 +123,34 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\aware%402x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\aware.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\categoryIcon%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\categoryIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\commander%402x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\commander.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\keepassAware%402x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\keepassAware.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\keepassCommander%402x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\keepassCommander.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\retrieve%402x.png">
@@ -162,6 +202,12 @@
     <Content Include="PropertyInspector\KeePassGeneratePI.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="PropertyInspector\KeePassAwarePI.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PropertyInspector\KeePassCommanderPI.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="PropertyInspector\KeePassRetrievePI.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -187,6 +233,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>$(ProjectDir)\..\..\Tools\DistributionTool.exe -b -i $(ProjectDir)\$(OutDir) -o $(ProjectDir)\$(OutDir)

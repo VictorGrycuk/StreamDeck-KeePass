@@ -29,6 +29,36 @@
       "Tooltip": "Generates a custom password using Keepass",
       "UUID": "com.victorgrycuk.keepass.generate",
       "PropertyInspectorPath": "PropertyInspector/KeePassGeneratePI.html"
+    },
+    {
+      "Icon": "Images/aware",
+      "Name": "Aware",
+      "States": [
+        {
+          "Image": "Images/keepassAware",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Retrieve a password entry based on the current active window",
+      "UUID": "com.victorgrycuk.keepass.aware",
+      "PropertyInspectorPath": "PropertyInspector/KeePassAwarePI.html"
+    },
+    {
+      "Icon": "Images/commander",
+      "Name": "MircoBabin's KeePassCommander",
+      "States": [
+        {
+          "Image": "Images/keepassCommander",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Allows direct communication with KeePass using MircoBabin's KeePassCommander",
+      "UUID": "com.victorgrycuk.keepass.commander",
+      "PropertyInspectorPath": "PropertyInspector/KeePassCommanderPI.html"
     }
   ],
   "Author": "Victor Grycuk",
@@ -36,7 +66,7 @@
   "Description": "Simple interface to retrieve information from KeePass database. Unofficial.",
   "Icon": "Images/pluginIcon",
   "URL": "https://github.com/VictorGrycuk/StreamDeck-KeePass",
-  "Version": "1.4.0",
+  "Version": "1.5.0",
   "CodePath": "streamdeck-keepass",
   "Category": "KeePass",
   "CategoryIcon": "Images/categoryIcon",

@@ -50,6 +50,10 @@
                     <input id="mustOccurAtMostOnce" class="sdProperty sdCheckbox" type="checkbox" name="configuration" oninput="setSettings()">
                     <label for="mustOccurAtMostOnce" class="sdpi-item-label"><span></span>Must Occur at most Once</label>
                 </div>
+                <div class="sdpi-item-child">
+                    <input id="randomlyPermute" class="sdProperty sdCheckbox" type="checkbox" name="randomlyPermute" oninput="setSettings()">
+                    <label for="randomlyPermute" class="sdpi-item-label"><span></span>Randomly permute characters of password</label>
+                </div>
             </div>
         </div>
         <div class="sdpi-item" id="dvExcludeCharacters">
@@ -59,6 +63,10 @@
         <div class="sdpi-item" id="dvCustomPattern">
             <div class="sdpi-item-label">Custom Pattern</div>
             <input class="sdpi-item-value sdProperty" id="customPattern" oninput="setSettings()">
+        </div>
+        <div class="sdpi-item" id="dvClearTime">
+            <div class="sdpi-item-label">Clear Time</div>
+            <input type="number" class="sdpi-item-value sdProperty" placeholder="0 to not clear clipboard" value="0" id="clearTime" oninput="setSettings()">
         </div>
     </div>
 </body>
