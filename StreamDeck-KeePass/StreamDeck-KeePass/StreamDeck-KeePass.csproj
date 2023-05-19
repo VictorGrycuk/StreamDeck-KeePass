@@ -58,8 +58,8 @@
     <Reference Include="CommandLine, Version=2.7.82.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.2.7.82\lib\net461\CommandLine.dll</HintPath>
     </Reference>
-    <Reference Include="KeePassLib, Version=2.30.0.15901, Culture=neutral, PublicKeyToken=a47af649847d8ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\KeePassLib.2.30\lib\KeePassLib.dll</HintPath>
+    <Reference Include="KeePass">
+      <HintPath>..\keepass\KeePass.exe</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
