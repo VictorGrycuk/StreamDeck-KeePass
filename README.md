@@ -85,7 +85,6 @@ It uses the following configuration:
 
 - **[Color Picker](https://github.com/VictorGrycuk/streamdeck-color-picker)**
 - **[Magnifier](https://github.com/VictorGrycuk/streamdeck-magnifier)**
-- **[Repository Watcher](https://github.com/VictorGrycuk/streamdeck-repository-watcher)**
 
 ---
 
